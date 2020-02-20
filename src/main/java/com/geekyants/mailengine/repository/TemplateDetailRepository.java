@@ -9,5 +9,4 @@ import com.geekyants.mailengine.entity.TemplateDetail;
 public interface TemplateDetailRepository extends CrudRepository<TemplateDetail, Long>{
 
 	public TemplateDetail findByTemplateName(String purpose);
-
 }

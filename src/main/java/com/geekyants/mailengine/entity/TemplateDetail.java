@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 
 @Entity
 public class TemplateDetail {
@@ -14,6 +15,7 @@ public class TemplateDetail {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long templateId;
 	private String templateName;
+	@Lob
 	private String filePath;
 	private Integer version;
 	private LocalDate lastUpdatedDate;
