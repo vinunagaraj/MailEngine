@@ -6,6 +6,6 @@ import javax.mail.MessagingException;
 
 public interface EmailService {
 
-	void sendMailForCustomerCreation(String recipientName, String recipientEmail, Locale locale) throws MessagingException;
+	void sendMailForCustomerCreation(String recipientName, String recipientEmail) throws MessagingException;
 
 }

@@ -79,7 +79,7 @@ public class SpringMailConfig implements ApplicationContextAware, EnvironmentAwa
 		final ClassLoaderTemplateResolver templateResolver = new ClassLoaderTemplateResolver();
 		templateResolver.setOrder(Integer.valueOf(2));
 		templateResolver.setResolvablePatterns(Collections.singleton("html/*"));
-		templateResolver.setPrefix("/mail/");
+		templateResolver.setPrefix("/templates/");
 		templateResolver.setSuffix(".html");
 		templateResolver.setTemplateMode(TemplateMode.HTML);
 		templateResolver.setCharacterEncoding(EMAIL_TEMPLATE_ENCODING);
