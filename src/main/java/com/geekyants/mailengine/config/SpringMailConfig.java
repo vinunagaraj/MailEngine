@@ -22,12 +22,12 @@ import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 import org.thymeleaf.templateresolver.ITemplateResolver;
 
 @Configuration
-@PropertySource("classpath:mail/emailconfig.properties")
+@PropertySource("classpath:emailconfig.properties")
 public class SpringMailConfig implements ApplicationContextAware, EnvironmentAware {
 
 	public static final String EMAIL_TEMPLATE_ENCODING = "UTF-8";
 
-	private static final String JAVA_MAIL_FILE = "classpath:mail/javamail.properties";
+	private static final String JAVA_MAIL_FILE = "classpath:javamail.properties";
 
 	private static final String HOST = "mail.server.host";
 	private static final String PORT = "mail.server.port";
@@ -54,7 +54,6 @@ public class SpringMailConfig implements ApplicationContextAware, EnvironmentAwa
 		final Properties javaMailProperties = new Properties();
 		javaMailProperties.load(this.applicationContext.getResource(JAVA_MAIL_FILE).getInputStream());
 		mailSender.setJavaMailProperties(javaMailProperties);
-
 		return mailSender;
 
 	}
@@ -62,14 +61,14 @@ public class SpringMailConfig implements ApplicationContextAware, EnvironmentAwa
 	@Bean
 	public ResourceBundleMessageSource emailMessageSource() {
 		final ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
-		messageSource.setBasename("mail/MailMessages");
+		messageSource.setBasename("MailMessages");
 		return messageSource;
 	}
 
 	@Bean
 	public TemplateEngine emailTemplateEngine() {
 		final SpringTemplateEngine templateEngine = new SpringTemplateEngine();
-		// Resolver for HTML emails (except the editable one)
+		// Resolver for HTML emails
 		templateEngine.addTemplateResolver(htmlTemplateResolver());
 		// Message source, internationalization specific to emails
 		templateEngine.setTemplateEngineMessageSource(emailMessageSource());
