@@ -6,9 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 
-    <!-- use the font -->
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -26,15 +24,16 @@
         </tr>
         <tr>
             <td bgcolor="#eaeaea" style="padding: 40px 30px 40px 30px;">
-                <p>Dear ${name},</p>
+                <p>Dear</p>
+                 <p th:text="${name}"></p>
                 <p>You have been onBoarded to the family of ABC bank <b>ABC Bank</b></p>
                 <p>Thanks</p>
             </td>
         </tr>
         <tr>
             <td bgcolor="#777777" style="padding: 30px 30px 30px 30px;">
-                <p>${signature}</p>
-                <p>${location}</p>
+                <p>ABC BANK PVT LTD</p>
+                <p>BANGALORE</p>
             </td>
         </tr>
     </table>
