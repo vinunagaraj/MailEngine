@@ -12,16 +12,7 @@ public class Account {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long accountId;
 	private Long customerId;
-
-	public Long getCustomerId() {
-		return customerId;
-	}
-
-	public void setCustomerId(Long customerId) {
-		this.customerId = customerId;
-	}
-
-	private Long accountNumber;
+	private int accountNumber;
 	private String accountType;
 	private String bankName;
 	private Double balance;
@@ -34,11 +25,19 @@ public class Account {
 		this.accountId = accountId;
 	}
 
-	public Long getAccountNumber() {
+	public Long getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(Long customerId) {
+		this.customerId = customerId;
+	}
+
+	public int getAccountNumber() {
 		return accountNumber;
 	}
 
-	public void setAccountNumber(Long accountNumber) {
+	public void setAccountNumber(int accountNumber) {
 		this.accountNumber = accountNumber;
 	}
 

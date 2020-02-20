@@ -1,8 +1,11 @@
 package com.geekyants.mailengine.repository;
 
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import com.geekyants.mailengine.entity.TemplateDetail;
+
 @Repository
-public class TemplateDetailRepository {
+public interface TemplateDetailRepository extends CrudRepository<TemplateDetail, Long> {
 
 }
