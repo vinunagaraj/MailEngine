@@ -4,8 +4,11 @@ import java.util.Locale;
 
 import javax.mail.MessagingException;
 
+import com.geekyants.mailengine.dto.EmailDto;
+import com.geekyants.mailengine.exception.NotFoundException;
+
 public interface EmailService {
 
-	void sendMailForCustomerCreation(String recipientName, String recipientEmail, Locale locale) throws MessagingException;
+	void sendMailForCustomerCreation(EmailDto emailDto, Locale locale) throws MessagingException, NotFoundException;
 
 }
