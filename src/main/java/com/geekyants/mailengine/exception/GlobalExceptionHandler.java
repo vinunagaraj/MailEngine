@@ -11,11 +11,25 @@ import com.geekyants.mailengine.dto.ErrorDto;
 @ControllerAdvice
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 @ExceptionHandler(NotFoundException.class)
-	public ResponseEntity<ErrorDto> NotFoundException(NotFoundException ex) {
+	public ResponseEntity<ErrorDto> NoEntriesException(NoEntriesException ex) {
 
 		ErrorDto errorResponse = new ErrorDto();
 		errorResponse.setMessage(ex.getMessage());
-		errorResponse.setStatusCode(0003);
+		errorResponse.setStatusCode(0001);
 		return new ResponseEntity<ErrorDto>(errorResponse, HttpStatus.OK);
 	}
+public ResponseEntity<ErrorDto> NotFoundException(NotFoundException ex) {
+
+	ErrorDto errorResponse = new ErrorDto();
+	errorResponse.setMessage(ex.getMessage());
+	errorResponse.setStatusCode(0002);
+	return new ResponseEntity<ErrorDto>(errorResponse, HttpStatus.OK);
+}
+public ResponseEntity<ErrorDto> InValidCustomerException(InValidCustomerException ex) {
+
+	ErrorDto errorResponse = new ErrorDto();
+	errorResponse.setMessage(ex.getMessage());
+	errorResponse.setStatusCode(0003);
+	return new ResponseEntity<ErrorDto>(errorResponse, HttpStatus.OK);
+}
 }

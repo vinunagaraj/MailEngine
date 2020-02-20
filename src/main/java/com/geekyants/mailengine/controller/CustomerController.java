@@ -8,23 +8,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.geekyants.mailengine.dto.CustomerRequestDto;
 import com.geekyants.mailengine.dto.ResponseDto;
 import com.geekyants.mailengine.exception.NoEntriesException;
+import com.geekyants.mailengine.exception.NotFoundException;
 import com.geekyants.mailengine.service.CustomerService;
 import com.geekyants.mailengine.service.EmailService;
 
 @RestController
 @RequestMapping("/customer")
 public class CustomerController {
-	
 
 	@Autowired
 	CustomerService customerService;
-	
+
 	@Autowired
 	private EmailService emailService;
 
@@ -34,11 +33,13 @@ public class CustomerController {
 		return customerService.customerRegistration(customerRequestDto);
 
 	}
-	
+
 	@PostMapping("/mail")
-	public String sendMail(@RequestParam String name,@RequestParam String email) throws MessagingException{
-		//Locale locale= new Locale("en", "INDIA");
-		emailService.sendMailForCustomerCreation(name, email);
+
+	public String sendMail(@RequestBody EmailDto emailDto) throws MessagingException, NotFoundException {
+		Locale locale = new Locale("EN", "INDIA");
+		emailService.sendMailForCustomerCreation(emailDto, locale);
+
 		return "email sent";
 	}
 
