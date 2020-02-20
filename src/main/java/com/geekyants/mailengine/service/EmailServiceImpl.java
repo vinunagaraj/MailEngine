@@ -12,6 +12,7 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
+
 @Service
 public class EmailServiceImpl implements EmailService{
 
@@ -25,7 +26,7 @@ public class EmailServiceImpl implements EmailService{
 	@Override
 	public void sendMailForCustomerCreation(String recipientName, String recipientEmail, Locale locale) throws MessagingException {
 		
-		 final Context ctx = new Context(locale);
+		 Context ctx = new Context(locale);
 		    ctx.setVariable("name", recipientName);
 		    ctx.setVariable("subscriptionDate", new Date());
 		    final MimeMessage mimeMessage = javaMailSender.createMimeMessage();

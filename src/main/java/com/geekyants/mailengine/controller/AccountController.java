@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.geekyants.mailengine.dto.AccountRequestDto;
 import com.geekyants.mailengine.exception.InValidCustomerException;
 import com.geekyants.mailengine.service.AccountService;
-
+/*
+ * Controller class for customer account creation
+ */
 @RestController
 public class AccountController {
 
