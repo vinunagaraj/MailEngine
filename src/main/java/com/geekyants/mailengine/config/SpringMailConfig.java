@@ -22,12 +22,12 @@ import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 import org.thymeleaf.templateresolver.ITemplateResolver;
 
 @Configuration
-@PropertySource("classpath:mail/emailconfig.properties")
+@PropertySource("classpath:emailconfig.properties")
 public class SpringMailConfig implements ApplicationContextAware, EnvironmentAware {
 
 	public static final String EMAIL_TEMPLATE_ENCODING = "UTF-8";
 
-	private static final String JAVA_MAIL_FILE = "classpath:mail/javamail.properties";
+	private static final String JAVA_MAIL_FILE = "classpath:javamail.properties";
 
 	private static final String HOST = "mail.server.host";
 	private static final String PORT = "mail.server.port";
