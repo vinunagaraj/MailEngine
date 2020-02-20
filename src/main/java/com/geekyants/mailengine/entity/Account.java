@@ -11,6 +11,16 @@ public class Account {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long accountId;
+	private Long customerId;
+
+	public Long getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(Long customerId) {
+		this.customerId = customerId;
+	}
+
 	private Long accountNumber;
 	private String accountType;
 	private String bankName;
