@@ -16,7 +16,7 @@ import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 
 import com.geekyants.mailengine.constant.ApplicationConstant;
-import com.geekyants.mailengine.controller.EmailDto;
+import com.geekyants.mailengine.dto.EmailDto;
 import com.geekyants.mailengine.entity.Customer;
 import com.geekyants.mailengine.entity.TemplateDetail;
 import com.geekyants.mailengine.exception.NotFoundException;

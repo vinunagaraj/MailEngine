@@ -4,7 +4,7 @@ import java.util.Locale;
 
 import javax.mail.MessagingException;
 
-import com.geekyants.mailengine.controller.EmailDto;
+import com.geekyants.mailengine.dto.EmailDto;
 import com.geekyants.mailengine.exception.NotFoundException;
 
 public interface EmailService {

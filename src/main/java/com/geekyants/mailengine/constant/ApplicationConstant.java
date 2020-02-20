@@ -10,6 +10,7 @@ public class ApplicationConstant {
 	public static final Double MINIMUM_BALANCE = 1000.00;
 	public static final String ABC_BANK = "ABC Bank";
 	public static final String ACCOUNT_CREATED_SUCCESSFULLY = "Account Created Successfully";
+	public static final String CUSTOMER_CREATION = "Customer Created Successfully";
 	
 
 }

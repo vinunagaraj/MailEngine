@@ -1,4 +1,4 @@
-package com.geekyants.mailengine.controller;
+package com.geekyants.mailengine.dto;
 
 public class EmailDto {
 	

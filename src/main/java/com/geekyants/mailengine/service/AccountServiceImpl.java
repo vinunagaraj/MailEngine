@@ -13,7 +13,9 @@ import com.geekyants.mailengine.exception.InValidCustomerException;
 import com.geekyants.mailengine.repository.AccountRepository;
 import com.geekyants.mailengine.repository.CustomerRepository;
 import com.geekyants.mailengine.util.Validation;
-
+/*
+ * Method for account creation
+ */
 @Service
 public class AccountServiceImpl implements AccountService {
 	
@@ -21,7 +23,14 @@ public class AccountServiceImpl implements AccountService {
 	AccountRepository accountRepository;
 	@Autowired
 	CustomerRepository customerRepository;
-
+	/**
+	 * @author Vinod B N
+	 * @author Karthika T
+	 * @author Raghib
+	 * 
+	 * @param accountRequestDto
+	 * @return String message
+	 */
 	@Override
 	public String accountCreation(AccountRequestDto accountRequestDto) throws InValidCustomerException {
 		Long customerId = accountRequestDto.getCustomerId();
