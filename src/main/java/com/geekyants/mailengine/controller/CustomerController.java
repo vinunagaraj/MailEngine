@@ -7,7 +7,6 @@ import javax.mail.MessagingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,9 +15,10 @@ import com.geekyants.mailengine.dto.ResponseDto;
 import com.geekyants.mailengine.exception.NoEntriesException;
 import com.geekyants.mailengine.service.CustomerService;
 import com.geekyants.mailengine.service.EmailService;
-
+/*
+ * Controller class for customer creation
+ */
 @RestController
-@RequestMapping("/customer")
 public class CustomerController {
 	
 
@@ -27,7 +27,15 @@ public class CustomerController {
 	
 	@Autowired
 	private EmailService emailService;
-
+	/**
+	 * @author Vinod B N
+	 * @author Karthika T
+	 * @author Raghib
+	 * 
+	 * @param customerRequestDto
+	 * @return ResponseDto of statusCode and message
+	 * @throws NoEntriesException
+	 */
 	@PostMapping(value = "/customers")
 	public ResponseDto customerRegistration(@RequestBody CustomerRequestDto customerRequestDto)
 			throws NoEntriesException {
@@ -35,7 +43,7 @@ public class CustomerController {
 
 	}
 	
-	@PostMapping("/mail")
+	@PostMapping("/mails")
 	public String sendMail(@RequestParam String name,@RequestParam String email) throws MessagingException{
 		Locale locale= new Locale("EN", "INDIA");
 		emailService.sendMailForCustomerCreation(name, email, locale);

@@ -15,7 +15,14 @@ public class AccountController {
 
 	@Autowired
 	AccountService accountService;
-	
+	/**
+	 * @author Vinod B N
+	 * @author Karthika T
+	 * @author Raghib
+	 * 
+	 * @param accountRequestDto
+	 * @throws InValidCustomerException
+	 */
 	@PostMapping("/customers/accounts")
 	public void accountCreation(AccountRequestDto accountRequestDto) throws InValidCustomerException {
 		accountService.accountCreation(accountRequestDto);

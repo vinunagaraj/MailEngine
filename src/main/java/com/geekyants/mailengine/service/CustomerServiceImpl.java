@@ -17,7 +17,9 @@ import com.geekyants.mailengine.dto.ResponseDto;
 import com.geekyants.mailengine.entity.Customer;
 import com.geekyants.mailengine.exception.NoEntriesException;
 import com.geekyants.mailengine.repository.CustomerRepository;
-
+/*
+ * Method to Register customer
+ */
 @Service
 public class CustomerServiceImpl implements CustomerService{
 	
@@ -32,7 +34,7 @@ public class CustomerServiceImpl implements CustomerService{
 			Customer customer = new Customer();
 			RestTemplate restTemplate = new RestTemplate();
 			HttpHeaders headers= new HttpHeaders();
-			HttpEntity ent= new HttpEntity<>(headers);
+			HttpEntity ent= new HttpEntity<EmailDto>(body);
 			ResponseEntity<String> response=restTemplate.exchange("http://localhost:8080/emailengine/mails", HttpMethod.POST, ent, String.class, customerRequestDto.getEmail());
 			customer.setStatus(ApplicationConstant.ACTIVE);
 			BeanUtils.copyProperties(customerRequestDto, customer);
